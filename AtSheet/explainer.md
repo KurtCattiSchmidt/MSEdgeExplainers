@@ -246,6 +246,7 @@ div {
 ```
 9. Interaction with existing fragment behavior regarding fragments mapping to HTML ID's - what happens if someone does location.href = "#foo"? What happens if there are elements with id="foo"? This also conflicts with how we've recently used `<link rel="expect" href="#foo">`, which again works with HTML IDs.
 10. Hmm, a question tied to this is, does the stylesheet instance defined by an @sheet get copied into the CSSOM of each place that imports it? Or is the instance shared? That is, if I modify the CSSStyleSheet for the @sheet in JS, do all the places where that @sheet is used also get updated? With CSS modules the answer is that all the instances are shared...it's maybe less clear with @sheet. I think for performance reasons and dynamic-updateability reasons it's best if they can be shared. Note that would be different from the @import rules that exist today, which create a new stylesheet every time.
+11. How could polyfilling work?
 
 ## References & acknowledgements
 Many thanks for valuable feedback and advice from:
